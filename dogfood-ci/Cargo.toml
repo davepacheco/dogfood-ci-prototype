@@ -5,5 +5,12 @@ edition = "2021"
 license = "MPL-2.0"
 
 [dependencies]
+anyhow.workspace = true
+clap.workspace = true
+http = "0.2.8"
+oauth2 = "4.3.0"
 oxide-client = { path = "../oxide-client" }
+reqwest.workspace = true
 tokio.workspace = true
+url.workspace = true
+uuid.workspace = true
