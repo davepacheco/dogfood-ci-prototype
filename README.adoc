@@ -1,0 +1,19 @@
+:showtitle:
+:icons: font
+
+= dogfood-ci prototype
+
+This repo contains a small Rust program that uses the OAuth2 device authentication flow in the external API to get an authentication token and then makes a request using the token that it got.  It doesn't really do anything else.
+
+The goal is to de-risk the plan to have buildomat use device authn tokens to make requests to our external API.
+
+Prerequisite: start up at least Nexus and probably the rest of the simulated control plane using https://github.com/oxidecomputer/omicron/blob/main/docs/how-to-run-simulated.adoc[the directions here].
+
+Assuming Nexus's external API is running on http://127.0.0.1:12220/, run _this_ program with:
+
+[source,text]
+----
+cargo run -- http://127.0.0.1:12220
+----
+
+You'll be prompted to open a URL in your browser to authenticate using the usual OAuth device flow.
