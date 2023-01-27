@@ -80,6 +80,12 @@ async fn main() -> Result<(), anyhow::Error> {
         token_response.access_token().secret().to_string()
     );
 
+    println!("expires in: {:?}", token_response.expires_in());
+    println!(
+        "refresh token: {:?}",
+        token_response.refresh_token().map(|t| t.secret())
+    );
+
     // Make an authenticated request using this token.
     let authn_headers = {
         let mut headers = reqwest::header::HeaderMap::new();
